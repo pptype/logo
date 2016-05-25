@@ -16,6 +16,7 @@ end
 
 rule '.png' => '.pdf' do |t|
   sh "convert -density 2000 -quality 2000 -resize 8000 #{t.source} #{t.name}"
+  sh "mogrify -crop 7630x7630+185+0 #{t.name}"
 end
 
 rule '.jpg' => '.png' do |t|
