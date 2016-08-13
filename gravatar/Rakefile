@@ -15,12 +15,11 @@ rule '.svg' => '.pdf' do |t|
 end
 
 rule '.png' => '.pdf' do |t|
-  sh "convert -density 2000 -quality 2000 -resize 8000 #{t.source} #{t.name}"
-  sh "mogrify -crop 7630x7630+185+0 #{t.name}"
+  sh "convert -density 8000 -quality 8000 #{t.source} #{t.name}"
 end
 
-rule '.jpg' => '.png' do |t|
-  sh "convert -alpha remove -background white #{t.source} #{t.name}"
+rule '.jpg' => '.pdf' do |t|
+  sh "convert -density 8000 -quality 8000 #{t.source} #{t.name}"
 end
 
 source_files = Rake::FileList.new("**/*.tex")

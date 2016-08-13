@@ -1,6 +1,16 @@
-\documentclass[preview, border=10mm]{standalone}
-\usepackage{graphicx}
+\documentclass[preview]{standalone}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,ifthen,fullpage}
+\usetikzlibrary{intersections}
 
 \begin{document}
-\resizebox{\linewidth}{!}{T}
+\thispagestyle{empty}
+\definecolor{lightblue}{rgb}{0.13,0.52,0.82}
+
+\begin{tikzpicture}[even odd rule, rounded corners=4, x=4, y=4]
+  \filldraw[fill=lightblue] (-1, -1) rectangle (3, 3)
+  (-3, -3) rectangle (1, 1)
+  [rotate=30] (-6, -6) rectangle (6, 6);
+\end{tikzpicture}
 \end{document}
