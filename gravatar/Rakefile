@@ -15,11 +15,11 @@ rule '.svg' => '.pdf' do |t|
 end
 
 rule '.png' => '.pdf' do |t|
-  sh "convert -density 8000 -quality 8000 #{t.source} #{t.name}"
+  sh "convert -density 800 -quality 800 #{t.source} #{t.name}"
 end
 
 rule '.jpg' => '.pdf' do |t|
-  sh "convert -density 8000 -quality 8000 #{t.source} #{t.name}"
+  sh "convert -density 800 -quality 800 #{t.source} #{t.name}"
 end
 
 source_files = Rake::FileList.new("**/*.tex")
